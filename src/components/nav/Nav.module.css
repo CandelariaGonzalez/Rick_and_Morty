@@ -1,0 +1,34 @@
+.navegacion{
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logoS{
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.logoS img{
+    height: 35px;
+    width: 10rem;
+}
+
+.botones{
+    margin-left: 5rem;
+}
+
+.botones button{
+    border: 0;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0rem 1rem;
+    margin: 0 1rem;
+}
+
+.botones button:hover{
+    font-weight: 600;
+}
