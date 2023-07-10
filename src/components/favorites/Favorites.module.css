@@ -1,14 +1,33 @@
-.bgContainer {
-    min-height: calc(100vh - 48px - 3rem);
+.bgContainer{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: calc(100vh - 48px - 1rem);
     background-image: url(https://wallpaperaccess.com/full/637647.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 3rem;
+    padding-top: 1rem;
+}
+
+.selects select{
+    margin: 0 1rem;
+    padding: 0.5rem;
+}
+
+.selects select option{
+    height: 3rem;
+}
+
+.infoCont {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    
+
 
 }
+
+
 
 

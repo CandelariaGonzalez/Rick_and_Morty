@@ -7,6 +7,7 @@ import { addFav, removeFav } from '../../redux/actions';
 function Card({ 
    id, 
    name,
+   gender,
    origin, 
    image, 
    onClose,
@@ -22,7 +23,7 @@ function Card({
          removeFav(id); // Aquí asegúrate de que 'id' esté definido y sea correcto
       } else {
        setIsFav(true);
-         addFav({id, name, origin, image});
+         addFav({id, name,gender ,origin, image});
       }
    }
 
@@ -44,6 +45,7 @@ function Card({
 
          <div className={style.infoC}>
             <h1>{name}</h1>
+            <h2>{gender}</h2>
             <Link to={`/detail/${id}`}>
                <img className={style.imgC} src={image} alt={name} />
             </Link>
