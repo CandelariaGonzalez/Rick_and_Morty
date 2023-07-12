@@ -1,0 +1,11 @@
+.container{
+    padding-top: 3rem;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../../img/gift.gif);
+    background-color: black;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 48px - 3rem)
+}

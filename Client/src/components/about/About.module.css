@@ -1,0 +1,31 @@
+.containerAbout{
+    min-height: calc(100vh - 48px - 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #121214;
+    padding-top: 3rem;
+    color: white;
+}
+
+.containerAbout h1{
+    font-size: 3rem;
+}
+
+.containerAbout p{
+    width: 50%;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+.logoAbout{
+    height: 13rem;
+    width: 13rem;
+    margin-top: 1rem;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTVf24dmwSEBtXlfZqUIr1Ty3xNxlSoPqEE8YCCED2w2i9YlO1F5UxLQSwdpor0KL8LBo&usqp=CAU);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
