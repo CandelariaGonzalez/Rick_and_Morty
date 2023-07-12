@@ -1,0 +1,2 @@
+# Rick_and_Morty
+Rick and Morty is an exciting project based on the popular animated series. It uses React, Redux and a custom server to offer an interactive experience. Through the server, it fetches up-to-date data about the characters in the series, allowing users to explore detailed information about them. With a combination of technologies and a touch of CSS imagination, this project offers a visually appealing interface and an immersive experience for Rick and Morty fans.
