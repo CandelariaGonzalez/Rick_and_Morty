@@ -6,7 +6,7 @@
 ## Author -
 **Candelaria Gonzalez**
 
-* [LinkedIn] (https://www.linkedin.com/in/candelariagonzalezdev/)
+* [LinkedIn](https://www.linkedin.com/in/candelariagonzalezdev/)
 
 ## Hiring
 If you want you can contact me at m.candelariagonzalez.s@gmail.com
