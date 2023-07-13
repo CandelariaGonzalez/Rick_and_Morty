@@ -7,6 +7,7 @@
 **Candelaria Gonzalez**
 
 * [LinkedIn] (https://www.linkedin.com/in/candelariagonzalezdev/)
+* [https://CandelariaGonzalez.github.io/Rick_and_Morty/] {https://CandelariaGonzalez.github.io/Rick_and_Morty/}
 
 ## Hiring
 If you want you can contact me at m.candelariagonzalez.s@gmail.com
