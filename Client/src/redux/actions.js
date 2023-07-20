@@ -1,18 +1,45 @@
+import axios from "axios";
 import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from './actions-type';
 
-export const addFav = (character) => {
-    return{
-        type: ADD_FAV,
-        payload: character
-    }
-}
+// export const addFav = (character) => {
+//     return{
+//         type: ADD_FAV,
+//         payload: character
+//     }
+// }
 
+// ACTION | addFav
+export const addFav = (character) => {
+   const endpoint = 'http://localhost:3001/favorites/';
+   return (dispatch) => {
+      axios.post(endpoint, character).then(({ data }) => {
+         return dispatch({
+            type: ADD_FAV,
+            payload: data,
+         });
+      });
+   };
+};
+
+// export const removeFav = (id) => {
+//     return{
+//         type: REMOVE_FAV,
+//         payload: id
+//     }
+// }
+
+// ACTION | removeFav
 export const removeFav = (id) => {
-    return{
-        type: REMOVE_FAV,
-        payload: id
-    }
-}
+    const endpoint = 'http://localhost:3001/favorites/' + id;
+    return (dispatch) => {
+       axios.delete(endpoint).then(({ data }) => {
+          return dispatch({
+             type: REMOVE_FAV,
+             payload: data,
+       });
+       });
+    };
+ };
 
 export const filterCards = (gender) =>
 {

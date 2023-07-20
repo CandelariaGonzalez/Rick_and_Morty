@@ -23,14 +23,10 @@ function App() {
       !access && navigate("/");
    }, [access]);
 
-    //credenciales fake
-      const email = 'm.candelariagonzalez.s@gmail.com';
-      const password = 'mipass123';
-
 
    //events
    const onSearch = (id) => {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      axios(`http://localhost:3001/character/${id}`)
          .then(({ data }) => {
          if (data.name && !characters.find((char) => char.id === data.id)) {
             setCharacters((oldChars) => [...oldChars, data]);
@@ -46,13 +42,14 @@ function App() {
    }
 
 
-   const login = (userData) =>{
-      if(userData.email === email && userData.password === password){
-         setAccess(true);
-         navigate('/home');
-      } else{
-         alert('incorrect credentials')
-      }
+   function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/user/login/';
+      axios(URL + `?email=${email}&password=${password}`).then((response) => {
+         const { access } = response.data;
+         setAccess(access);
+         access && navigate('/home');
+      });
    }
 
 
