@@ -25,32 +25,36 @@ function App() {
 
 
    //events
-   const onSearch = (id) => {
-      axios(`http://localhost:3001/character/${id}`)
-         .then(({ data }) => {
-         if (data.name && !characters.find((char) => char.id === data.id)) {
-            setCharacters((oldChars) => [...oldChars, data]);
+   async function onSearch(id) {
+      try{
+         const backRequest = await axios(`http://localhost:3001/character/${id}`)
+         if(backRequest.data.name){
+            setCharacters((oldChars) => [...oldChars, backRequest.data]);
+         }else{
+            alert('Character not found')
          }
-      })
-      .catch((err) => window.alert("No characters with this ID!"));
-      ;
+      }catch(error){
+         alert("No characters with this ID!")
+      }
    }
-
 
    const onClose = (id) =>{
       setCharacters(characters.filter((char) => char.id !== id));
    }
 
 
-   function login(userData) {
+  async function login(userData) {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/user/login/';
-      axios(URL + `?email=${email}&password=${password}`).then((response) => {
-         const { access } = response.data;
+      try{
+         const backendLogin = await axios(URL + `?email=${email}&password=${password}`)
+         const {data} = backendLogin;
+         const { access } = data;
          setAccess(access);
          access && navigate('/home');
-      });
-   }
+      }catch(error){
+         alert(error.message)
+      }}
 
 
 //render

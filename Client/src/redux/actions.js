@@ -11,15 +11,19 @@ import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from './actions-type';
 // ACTION | addFav
 export const addFav = (character) => {
    const endpoint = 'http://localhost:3001/favorites/';
-   return (dispatch) => {
-      axios.post(endpoint, character).then(({ data }) => {
-         return dispatch({
-            type: ADD_FAV,
-            payload: data,
-         });
-      });
-   };
-};
+
+   return async (dispatch) => {
+   try{
+      const response = await axios.post(endpoint, character)
+      const {data} = response
+      return dispatch({
+         type: ADD_FAV,
+         payload: data
+      })
+   } catch(error){
+      alert(error.message);
+   }
+   }};
 
 // export const removeFav = (id) => {
 //     return{
@@ -31,15 +35,26 @@ export const addFav = (character) => {
 // ACTION | removeFav
 export const removeFav = (id) => {
     const endpoint = 'http://localhost:3001/favorites/' + id;
-    return (dispatch) => {
-       axios.delete(endpoint).then(({ data }) => {
-          return dispatch({
-             type: REMOVE_FAV,
-             payload: data,
-       });
-       });
-    };
+
+    return async(dispatch) => {
+      try{
+         const response = await axios.delete(endpoint);
+         const {data} = response;
+            return dispatch({
+               type: REMOVE_FAV,
+               payload: data,
+         });
+      } catch(error){
+         alert(error.message)
+      }
+      };
  };
+
+
+
+
+
+
 
 export const filterCards = (gender) =>
 {
